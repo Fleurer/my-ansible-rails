@@ -1,4 +1,48 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+    # BASIC DEPENDENCIES
+    # ================== 
+    - name: update apt source
+      copy: src=files/sources.list dest=/etc/apt/sources.list
+
+    - name: apt-get update
+      apt: update_cache=yes
+
+    - name: install essential packages
+      apt: pkg={{ item }} state=installed
+      sudo: true
+      with_items:
+        - build-essential
+        - wget
+        - curl
+        - ufw
+        - git-core
+        - nodejs
+        - imagemagick
+        - vim
+        - qrencode
+        - libqrencode-dev
+        - libmysqlclient18
+        - libmysqlclient-dev
+        - fail2ban
+
 - hosts: vagrant
   sudo: true
   roles:
-    - common
+  # https://galaxy.ansible.com/list#/roles/6
+  - role: bennojoy.redis
+    redis_requirepass: true
+    redis_pass: coinbaz
+  # https://galaxy.ansible.com/list#/roles/509
+  - role: Ansibles.mysql
+    mysql_root_password: coinbaz
+
+- hosts: vagrant
+  roles:
+  # https://galaxy.ansible.com/list#/roles/335
+  - role: sgmac.rbenv
+    user: vagrant
+    ruby_version: 2.1.0
+    sh: bash
