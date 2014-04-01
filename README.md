@@ -1,4 +1,8 @@
-vagrant-ansible-provisioning-example
-====================================
+Rails / Ansible / Vagrant
+=========================
 
-an example of Ansible provisioning in Vagrant
+```
+vagrant up
+./provison.sh
+vagrant ssh
+```
