@@ -46,3 +46,10 @@
     user: vagrant
     ruby_version: 2.1.0
     sh: bash
+
+- hosts: vagrant
+  sudo: true
+  roles:
+  # https://galaxy.ansible.com/list#/roles/573
+  - role: ansible-nodejs
+    user: vagrant
