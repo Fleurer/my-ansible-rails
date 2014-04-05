@@ -28,6 +28,9 @@
         - libmysqlclient18
         - libmysqlclient-dev
         - fail2ban
+        # for test & development only
+        - libqtwebkit-dev
+        - libsqlite3-dev
 
 - hosts: vagrant
   sudo: true
