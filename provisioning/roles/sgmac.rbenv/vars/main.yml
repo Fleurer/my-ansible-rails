@@ -4,3 +4,4 @@
 
 rbenv_dir: "{{home}}/.rbenv"
 rbenv_plugins: "{{home}}/.rbenv/plugins"
+rbenv_bin: "{{rbenv_dir}}/bin/rbenv"
