@@ -3,7 +3,7 @@
   sudo: true
   tasks:
     # BASIC DEPENDENCIES
-    # ================== 
+    # ==================
     - name: update apt source
       copy: src=files/sources.list dest=/etc/apt/sources.list
 
@@ -17,6 +17,7 @@
         - build-essential
         - wget
         - curl
+        - tmux
         - ufw
         - git-core
         - nodejs
