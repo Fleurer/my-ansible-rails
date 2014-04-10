@@ -31,6 +31,7 @@
         # for test & development only
         - libqtwebkit-dev
         - libsqlite3-dev
+        - sendmail
 
 - hosts: vagrant
   sudo: true
