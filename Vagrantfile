@@ -3,6 +3,7 @@ Vagrant.configure("2") do |config|
   config.vm.network :private_network, ip: "192.168.10.233"
 
   config.vm.synced_folder "shared/", "/home/vagrant/shared"
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
 
   config.vm.provision :ansible do |ansible|
     ansible.playbook = "provisioning/playbook.yml"
