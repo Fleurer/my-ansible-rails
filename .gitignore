@@ -1,2 +1,4 @@
 /.vagrant
 /shared/*
+/provisioning/remote-hosts
+/provision-remote.sh
