@@ -48,7 +48,7 @@
   roles:
   # https://galaxy.ansible.com/list#/roles/335
   - role: sgmac.rbenv
-    user: {{ app_user }}
+    user: "{{ app_user }}"
     ruby_version: 2.1.0
     sh: bash
 
@@ -57,4 +57,4 @@
   roles:
   # https://galaxy.ansible.com/list#/roles/573
   - role: ansible-nodejs
-    user: {{ app_user }}
+    user: "{{ app_user }}"

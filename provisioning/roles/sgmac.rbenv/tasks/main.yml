@@ -48,7 +48,8 @@
 - name: Install ruby version
   sudo_user: "{{ user }}"
   sudo: yes
-  command: "{{rbenv_bin}} versions | grep {{ ruby_version }} || {{rbenv_bin}} install {{ ruby_version }} -f"
+  shell: creates="{{ rbenv_dir }}/versions/{{ ruby_version }}"
+         "{{rbenv_bin}} versions | grep {{ ruby_version }} || {{rbenv_bin}} install {{ ruby_version }} -f"
   environment:
     RUBY_BUILD_SKIP_MIRROR: 1
   when: ruby_version is defined
