@@ -33,7 +33,7 @@
         - libsqlite3-dev
         - sendmail
 
-- hosts: coinbaz
+- hosts: all
   sudo: true
   roles:
   # https://galaxy.ansible.com/list#/roles/6
@@ -44,17 +44,17 @@
   - role: Ansibles.mysql
     mysql_root_password: coinbaz
 
-- hosts: coinbaz
+- hosts: all
   roles:
   # https://galaxy.ansible.com/list#/roles/335
   - role: sgmac.rbenv
-    user: coinbaz
+    user: {{ app_user }}
     ruby_version: 2.1.0
     sh: bash
 
-- hosts: coinbaz
+- hosts: all
   sudo: true
   roles:
   # https://galaxy.ansible.com/list#/roles/573
   - role: ansible-nodejs
-    user: coinbaz
+    user: {{ app_user }}
