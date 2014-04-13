@@ -4,8 +4,8 @@
   tasks:
     # BASIC DEPENDENCIES
     # ==================
-    # - name: update apt source
-    #  copy: src=files/sources.list dest=/etc/apt/sources.list
+    - name: update apt source
+      copy: src=files/sources.list dest=/etc/apt/sources.list
 
     - name: apt-get update
       apt: update_cache=yes

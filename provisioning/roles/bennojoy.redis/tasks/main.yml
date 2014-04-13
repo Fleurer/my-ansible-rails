@@ -12,6 +12,10 @@
   with_items: redis_redhat_pkg
   when: ansible_os_family == "RedHat"
 
+- name: Modify repo to get latest redis-server
+  apt_repository: repo='ppa:chris-lea/redis-server'
+  when: ansible_os_family == "Debian"
+
 - name: Install the Redis packages 
   apt: name={{ item }} state=present update_cache=yes
   with_items: redis_ubuntu_pkg
