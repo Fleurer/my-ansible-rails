@@ -18,7 +18,7 @@
         - wget
         - curl
         - tmux
-        - ufw
+        #- ufw
         - git-core
         - nodejs
         - imagemagick
@@ -27,22 +27,11 @@
         - libqrencode-dev
         - libmysqlclient18
         - libmysqlclient-dev
-        - fail2ban
+        #- fail2ban
         # for test & development only
-        - libqtwebkit-dev
-        - libsqlite3-dev
+        #- libqtwebkit-dev
+        #- libsqlite3-dev
         - sendmail
-
-- hosts: all
-  sudo: true
-  roles:
-  # https://galaxy.ansible.com/list#/roles/6
-  - role: bennojoy.redis
-    redis_requirepass: true
-    redis_pass: coinbaz
-  # https://galaxy.ansible.com/list#/roles/509
-  - role: Ansibles.mysql
-    mysql_root_password: coinbaz
 
 - hosts: all
   roles:
@@ -51,10 +40,3 @@
     user: "{{ app_user }}"
     ruby_version: 2.1.0
     sh: bash
-
-- hosts: all
-  sudo: true
-  roles:
-  # https://galaxy.ansible.com/list#/roles/573
-  - role: ansible-nodejs
-    user: "{{ app_user }}"
